@@ -1,0 +1,12 @@
+module topmodule(clk, clrn, x, a, b, c, d, e, f, g);
+
+    input clk, clrn, x;
+    output a, b, c, d, e, f, g;
+    
+    wire [2:0] q;
+    wire [2:0] ns;
+    
+    dff_3 dff(ns, clk, clrn, q);
+    statemachine sm(x, q, a, b, c, d, e, f, g, ns);
+
+endmodule
