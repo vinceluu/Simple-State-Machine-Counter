@@ -1,0 +1,20 @@
+module dff_3(
+    input [2:0] ns,
+    input clk,
+    input clrn,
+    output reg [2:0] q
+    );
+    
+    always@(posedge clk, negedge clrn)
+    begin
+        if(clrn == 1'b0)
+        begin
+        q[2:0] <= 3'b000;
+        end
+        else
+        begin
+        q [2:0] <= ns [2:0];
+        end
+    end
+    
+endmodule
